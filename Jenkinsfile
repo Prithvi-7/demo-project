@@ -2,7 +2,7 @@ pipeline
 {
   agent any
   environment{
-    IMAGE_NAME="prithvirajan123/jenkins-demo"
+    IMAGE_NAME= "prithvirajan123/jenkins-demo"
     stages{
       stage('docker build')
       {
