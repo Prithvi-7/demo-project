@@ -8,6 +8,13 @@ pipeline
           sh 'docker build -t jenkins-demo .'
         }
       }
+      stage('check')
+      {
+        steps{
+          sh 'pwd'
+          sh 'ls -la'
+        }
+      }
     }
 }
         
