@@ -5,7 +5,7 @@ pipeline
       stage('docker build')
       {
         steps{
-          sh 'docker build -d jenkins-demo .'
+          sh 'docker build -t jenkins-demo .'
         }
       }
     }
