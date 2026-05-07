@@ -30,8 +30,11 @@ pipeline
           }
         }
       }
-      stage('push docker image')
+      stage('push docker image'){
+      steps{
       sh 'docker push $IMAGE_NAME'
+      }
+      }
     }
 }
         
