@@ -39,5 +39,10 @@ pipeline {
                 sh 'docker push $IMAGE_NAME'
             }
         }
+        stage('changes') {
+            steps {
+                echo 'webhook implemented'
+            }
+        }
     }
 }
