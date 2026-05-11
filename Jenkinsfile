@@ -41,7 +41,7 @@ pipeline {
         }
         stage('changes') {
             steps {
-                echo 'webhook implemented'
+                echo 'new webhook implemented'
             }
         }
     }
