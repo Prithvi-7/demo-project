@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = "prithvirajan123/jenkins-demo"
+        CONTAINER_NAME = "prithvi/jenkins-demo"
     }
 
     stages {
