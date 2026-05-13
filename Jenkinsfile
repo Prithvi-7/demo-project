@@ -24,7 +24,7 @@ pipeline {
             steps {
                 withCredentials([
                     usernamePassword(
-                        credentialsId: 'dockerhub-creds',
+                        credentialsId: 'dockerhub',
                         usernameVariable: 'DOCKER_USER',
                         passwordVariable: 'DOCKER_PASS'
                     )
@@ -42,6 +42,23 @@ pipeline {
         stage('changes') {
             steps {
                 echo 'new webhook implemented'
+            }
+        }
+        stage('Stop Old Container') {
+            steps {
+                sh 'docker stop $CONTAINER_NAME || true'
+                sh 'docker rm $CONTAINER_NAME || true'
+            }
+        }
+
+        stage('Run New Container') {
+            steps {
+                sh '''
+                docker run -d \
+                -p 80:80 \
+                --name $CONTAINER_NAME \
+                $IMAGE_NAME
+                '''
             }
         }
     }
